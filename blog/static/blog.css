@@ -1,0 +1,53 @@
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f0f0;
+}
+
+.navbar-bg-white {
+    background-color: white;
+    border: 1px solid #d3d3d3;
+}
+
+.content-container {
+    max-width: 950px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0px;
+}
+
+.navbar-container {
+    max-width: 950px;
+    padding: 10px 0px 10px 0px;
+    font-size: 0.875rem;
+}
+
+.single-post-home {
+    background-color: white;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.about-snippet-block {
+    background-color: white;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.about-page-block {
+    background-color: white;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+@media (min-width:768px) {
+    .single-post-home {
+        margin-left: 30px;
+    }
+    .about-page-block {
+        margin-left: 30px;
+    }
+}

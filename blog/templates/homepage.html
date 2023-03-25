@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Homepage{% endblock title %}
+
+{% block content %}
+    <div class="container content-container">
+        <div class="row no-gutters">
+            <div class="col-md-9 order-md-2">
+                {% for post in posts %}
+                <div class="single-post-home">
+                    <h5>{{ post.title }}</h5>
+                    <p>{{ post.body }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-3 order-md-1">
+                <div class="about-snippet-block text-center">
+                    {{ lipsum(n=3, min=5, max=10) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
