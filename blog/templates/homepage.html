@@ -9,7 +9,10 @@
                 {% for post in posts %}
                 <div class="single-post-home">
                     <h5>{{ post.title }}</h5>
-                    <p>{{ post.body }}</p>
+                    <p class="p-small-created-date">{{ post.created_at.strftime('%d.%m.%y') }}</p>
+                    {% if post.description %}
+                    <p class="p-small-description text-muted mb-0">{{ post.description }}</p>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>

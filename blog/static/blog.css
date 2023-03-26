@@ -43,6 +43,14 @@ html, body {
     padding: 20px;
 }
 
+.p-small-description{
+    font-size: 0.875rem;
+}
+
+.p-small-created-date {
+    font-size: 0.800rem;
+}
+
 @media (min-width:768px) {
     .single-post-home {
         margin-left: 30px;
