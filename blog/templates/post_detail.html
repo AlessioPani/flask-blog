@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ post.title }} - CodingWiz
+{% endblock title %}
+
+{% block content %}
+    <div class="container content-container">
+        <div class="row no-gutters">
+            <div class="col-md-9 order-md-2">
+
+                <div class="post-page-block">
+                    <h3>{{ post.title }}</h3>
+                    <p class="p-small-created-date text-muted">{{ post.created_at.strftime('%d.%m.%y') }}</p>
+                    <p class="text-muted">{{ post.description }}</p>
+                    <p >{{ post.body }}</p>
+                </div>
+
+            </div>
+
+            <div class="col-md-3 order-md-1">
+                {% include 'about_me_snippet.html' %}
+            </div>
+            
+        </div>
+    </div>
+{% endblock content %}
