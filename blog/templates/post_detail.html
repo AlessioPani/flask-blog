@@ -13,7 +13,7 @@
                     <h3>{{ post.title }}</h3>
                     <p class="p-small-created-date text-muted">{{ post.created_at.strftime('%d.%m.%y') }}</p>
                     <p class="text-muted">{{ post.description }}</p>
-                    <p >{{ post.body }}</p>
+                    <p >{{ post.body|markdown }}</p>
                 </div>
 
             </div>

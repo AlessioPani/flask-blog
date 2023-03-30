@@ -1,9 +1,26 @@
 from flask_wtf import FlaskForm
-from wtforms import BooleanField, PasswordField, StringField, SubmitField
-from wtforms.validators import data_required
+from wtforms import (BooleanField, PasswordField, StringField,
+                     SubmitField, TextAreaField)
+from wtforms.validators import DataRequired, Length
+
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[data_required()])
-    password = PasswordField('Password', validators=[data_required()])
+    username = StringField('Username', 
+            validators=[DataRequired(message='Username is required')])
+    password = PasswordField('Password', 
+            validators=[DataRequired(message='Password is required')])
     remember_me = BooleanField('Remember me')
     submit = SubmitField('Login')
+
+
+class PostForm(FlaskForm):
+    title = StringField('Title', 
+            validators=[DataRequired(message='Title field required'), 
+                        Length(min=3, max=120, 
+                               message='Only 120 characters are allowed')])
+    description = TextAreaField('Description', 
+            validators=[Length(max=240, 
+                               message='Only 240 characters are allowed')])
+    body = TextAreaField('Content', 
+            validators=[DataRequired('Content field required')])
+    submit = SubmitField('Publish')
