@@ -1,2 +1,2 @@
 # FlaskBlog
-A fully-fledged blog written using Flask.
+A personal blog written using Flask.
