@@ -12,7 +12,7 @@
                     <h3>{{ post.title }}</h3>
                     <p class="p-small-created-date text-muted">{{ post.created_at.strftime('%d.%m.%y') }}</p>
                     {% if current_user.is_authenticated and current_user == post.author %}
-                    <a class="btn btn-sm btn-outline-success" href="{{ url_for('post_update', post_id=post.id)}}">Edit</a>
+                    <a class="btn btn-sm btn-outline-success" href="{{ url_for('post_update', post_slug=post.slug)}}">Edit</a>
                     <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deletePostModal">
                         Delete
                     </button>
