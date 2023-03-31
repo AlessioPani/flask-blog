@@ -75,3 +75,14 @@ def post_update(post_id):
         form.description.data = post_instance.description
         form.body.data = post_instance.body
     return render_template('post_editor.html', form=form)
+
+
+@app.route('/post/<int:post_id>/delete', methods=["POST"])
+@login_required
+def post_delete(post_id):
+    post_instance = Post.query.get_or_404(post_id)
+    if post_instance.author != current_user:
+        abort(403)
+    db.session.delete(post_instance)
+    db.session.commit()
+    return redirect(url_for('homepage'))
