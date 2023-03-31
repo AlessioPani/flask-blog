@@ -36,6 +36,6 @@ class Post(db.Model):
     body = db.Column(db.Text(), nullable=False)
     slug = db.Column(db.String(250))
     image = db.Column(db.String(120))
-    
+
     def __repr__(self):
         return f"Post('{self.id}', '{self.title}')"

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}404 - Not found{% endblock %}
+
+{% block content %}
+<div class="container content-container">
+
+    <div class="row no-gutters">
+
+        <div class="col-md-9 order-md-2">
+            <div class="about-page-block">
+                <p class="lead">Error 404</p>
+                <hr>
+                <p>Not Found</p>
+                <p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+                <hr>
+                <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('homepage') }}">↩ Homepage</a>            
+            </div>  
+        </div>
+
+        <div class="col-md-3 order-md-1">
+            {% include 'about_me_snippet.html' %}              
+        </div>
+
+    </div>
+    
+</div>
+{% endblock %}
