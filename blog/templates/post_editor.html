@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Post editor - CodingWiz
+Post editor
 {% endblock title %}
 
 
 {% block content %}
-<div class="container content-container">
+<div class="container content-container mt-3 px-3 px-lg-0">
     {% if request.path == '/create-post' %}
         <h2>Create a new post</h2>
     {% else %}

@@ -13,15 +13,16 @@
                     </h5>
                     <p class="p-small-created-date">{{ post.created_at.strftime('%d.%m.%y') }}</p>
                     {% if post.description %}
-                    <p class="p-small-description text-muted mb-0">{{ post.description }}</p>
+                    <p class="p-small-description text-muted mb-0">
+                        {{ post.description }}
+                        <a class="custom-link read-more" href="{{ url_for('post_detail', post_slug=post.slug) }}">Read the article</a>
+                    </p>
                     {% endif %}
                 </div>
                 {% endfor %}
             </div>
             <div class="col-md-3 order-md-1">
-                <div class="about-snippet-block text-center">
-                    {{ lipsum(n=3, min=5, max=10) }}
-                </div>
+                {% include 'about_me_snippet.html' %}
             </div>
         </div>
     </div>

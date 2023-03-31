@@ -4,8 +4,14 @@ html, body {
 }
 
 .navbar-bg-white {
-    background-color: white;
+    background-color: #fff;
     border: 1px solid #d3d3d3;
+}
+
+.navbar-container {
+    max-width: 950px;
+    font-size: 0.875rem;
+    padding: 10px 0px 10px 0px;
 }
 
 .content-container {
@@ -15,14 +21,15 @@ html, body {
     padding: 0px;
 }
 
-.navbar-container {
-    max-width: 950px;
-    padding: 10px 0px 10px 0px;
-    font-size: 0.875rem;
+.about-snippet-block {
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    padding: 20px;   
 }
 
-.single-post-home {
-    background-color: white;
+.about-page-block {
+    background-color: #fff;
     border: 1px solid #d3d3d3;
     border-radius: 5px;
     padding: 20px;
@@ -30,53 +37,80 @@ html, body {
 }
 
 .post-page-block {
-    background-color: white;
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 30px;   
+}
+
+.single-post-home {
+    background-color: #fff;
     border: 1px solid #d3d3d3;
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 30px;
 }
 
-.about-snippet-block {
-    background-color: white;
-    border: 1px solid #d3d3d3;
-    border-radius: 5px;
-    padding: 20px;
+.no-border-top {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
-.about-page-block {
-    background-color: white;
+.post-image {
     border: 1px solid #d3d3d3;
-    border-radius: 5px;
-    padding: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
-.p-small-description{
+.p-small-one {
     font-size: 0.875rem;
 }
 
-.p-small-created-date {
+.p-small-two {
     font-size: 0.800rem;
 }
 
 .custom-link {
-    color: black;
-    text-decoration: none;
+    color: #000;
 }
 
 .custom-link:hover {
-    color: #005E7C;
+    color: #343a40;
     text-decoration: none;
 }
 
-@media (min-width:768px) {
+.read-more {
+    color: #6c757d;
+    text-decoration: underline;
+}
+
+.read-more:hover {
+    color: #343a40 !important;
+}
+
+@media (min-width: 768px) {
     .single-post-home {
         margin-left: 30px;
     }
+    
     .about-page-block {
         margin-left: 30px;
     }
+
     .post-page-block {
         margin-left: 30px;
+    }
+
+    .post-image-block {
+        margin-left: 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    .nav-link {
+        padding-right: 0px !important;
+        padding-left: 1rem !important;
     }
 }
