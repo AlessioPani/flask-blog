@@ -9,6 +9,13 @@
         <div class="row no-gutters">
             <div class="col-md-9 order-md-2">
                 <div class="post-page-block">
+
+                    {% if post.image %}
+                    <div>
+                        <img class="img-fluid" src="{{ url_for('static', filename='img/posts/' + post.image) }}" alt="">
+                    </div>
+                    {% endif %}
+
                     <h3>{{ post.title }}</h3>
                     <p class="p-small-created-date text-muted">{{ post.created_at.strftime('%d.%m.%y') }}</p>
                     {% if current_user.is_authenticated and current_user == post.author %}

@@ -1,7 +1,7 @@
 from blog import app, db
 from blog.models import Post, User
 from blog.forms import LoginForm, PostForm
-from blog.utils import title_slugifier
+from blog.utils import save_picture, title_slugifier
 from flask import abort, flash, redirect, render_template, request, url_for
 from flask_login import current_user, login_required, login_user, logout_user
 
@@ -47,6 +47,15 @@ def post_create():
         slug = title_slugifier(form.title.data)
         new_post = Post(title=form.title.data, body=form.body.data, slug=slug,
                         description=form.description.data, author=current_user)
+        if form.image.data:
+            try:
+                image = save_picture(form.image.data)
+                new_post.image = image
+            except Exception:
+                db.session.add(new_post)
+                db.session.commit()
+                flash('There has been an issue during the image upload: change image and try again')
+                return redirect(url_for('post_update', post_slug=new_post.slug))
         db.session.add(new_post)
         db.session.commit()
         return redirect(url_for('post_detail', post_slug=new_post.slug))
@@ -70,6 +79,14 @@ def post_update(post_slug):
         post_instance.title = form.title.data
         post_instance.description = form.description.data
         post_instance.body = form.body.data
+        if form.image.data:
+            try:
+               image = save_picture(form.image.data)
+               post_instance.image = image
+            except Exception:
+               db.session.commit()
+               flash('There has been an issue during the image upload: change image and try again')
+               return redirect(url_for('post_update', post_slug=post_instance.slug))
         db.session.commit()
         return redirect(url_for('post_detail', post_slug=post_instance.slug))
     elif request.method == "GET":
