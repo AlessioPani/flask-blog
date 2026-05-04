@@ -18,7 +18,7 @@ misaka==2.1.1
 Pillow==12.1.1
 pycodestyle==2.10.0
 pycparser==2.21
-python-dotenv==1.0.0
+python-dotenv==1.2.2
 SQLAlchemy==2.0.7
 typing_extensions==4.5.0
 Werkzeug==3.1.5
